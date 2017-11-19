@@ -28,4 +28,6 @@ series_multiplier = (4*P)/(pi^4*a*b*D);
 Q = summation(m,n,x_o,y_o,a,b)
 %initialize function into sub-calculations
 
+%testing
+
 
