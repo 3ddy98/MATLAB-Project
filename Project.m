@@ -25,7 +25,7 @@ v = input('');
 D=(E*h^3)/(12*(1-v^2));
 %Initialize the function multiplying the series
 series_multiplier = (4*P)/(pi^4*a*b*D);
-Q = summation(m,n,x_o,y_o,a,b)
+[Q] = deflection(x_o,y_o,a,b);
 %initialize function into sub-calculations
 
 
