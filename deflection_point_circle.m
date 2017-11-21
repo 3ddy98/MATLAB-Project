@@ -1,4 +1,4 @@
-function max_point_circle = deflection_point_circle(d,h,E,v,p)
+function max_point_circle = deflection_point_circle(d,h,E,v,P)
 %Point load on a circular plate
 %case 8
 % d=24;
@@ -28,7 +28,7 @@ theta = 0:pi/8:2*pi;
 
 D=(E*h^3)/(12*(1-v^2));
 
-W=(p)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
+W=(P)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
 
 %X = R.*cos(THETA);
 %Y = R.*sin(THETA);
