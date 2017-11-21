@@ -1,4 +1,4 @@
-function max_both_circular = both_distributed_circular(d,h,E,v,q)
+function both_distributed_circular = (d,h,E,v,q);
 % d=8;
 % h=.25;
 % E=30*10^6;
@@ -29,7 +29,7 @@ W_point=(p)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
 
 %-------Both-------%
 total = W_point + W_distributed;
-max_both_circular = max(max(total));
+disp(max(max(total)));
 
 X = R.*cos(THETA);
 Y = R.*sin(THETA);

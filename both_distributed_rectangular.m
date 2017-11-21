@@ -1,4 +1,4 @@
-
+function max_both_distributed_rectagular = both_distributed_rectangular(x0,y0,a,b,x,y,h,E,v,q0,P)
 %Case 6
 % x0=5;
 % y0=10;
@@ -13,15 +13,15 @@
 % P=120;
 
 %Case 7
-a = 10;
-b = 20;
-h = .125;
-E = 10000000;
-v = .3;
-q0 = 40;
-P = 120;
-x0 = 2;
-y0 = 10;
+% a = 10;
+% b = 20;
+% h = .125;
+% E = 10000000;
+% v = .3;
+% q0 = 40;
+% P = 120;
+% x0 = 2;
+% y0 = 10;
 
 
 D=(E*h^3)/(12*(1-v^2));
@@ -46,8 +46,10 @@ for m= 1:2:19
   end
 end
 both_sum = total_function_summed + Z;
-s = max(max(both_sum));
-disp(s)
+max_both_distributed_rectagular = max(max(both_sum));
+disp(max_both_distributed_rectangular)
+
+%-------Graphing-------%
 contour(X,Y,both_sum)
 xlabel('x - pos (in)')
 ylabel('y - pos (in)')
