@@ -1,0 +1,16 @@
+function y = deflection_distributed(a,b,x,y,series_multiplier_distributed)
+
+[X,Y] = meshgrid(x,y)
+for m= 1:2:9
+  for n = 1:2:9
+    sin_x_function = sin((m.*pi.*X)./a);
+    sin_y_function = sin((n.*pi.*Y)./b);
+    dividing_function = (m.*n).*((m.^2./a.^2)+(n.^2./b.^2)).^2;
+
+    total_function(m,n) = (sin_x_function*sin_y_function)/dividing_function;
+
+  end
+ 
+  storage =[storage, total_function)
+end
+surf(X,Y,total_function)

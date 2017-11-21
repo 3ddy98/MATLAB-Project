@@ -1,0 +1,38 @@
+%Project
+%Edward Ponce
+
+%input x dimension
+a = input('X:');
+%input y dimension
+b = input('Y:');
+%input thickness
+h = input('H:');
+%input load
+P = input('P:');
+%input x_o location of load
+x_o = input('Xo:');
+%input y_o location of load
+y_o = input('Yo:');
+
+%input Elastic Modulus
+E = input('E:');
+%input Poisson Ratio
+v = input('v:');
+
+%-----------Calculations-----------%
+%----------------------------------%
+%calculate D for 
+D=(E*h^3)/(12*(1-v^2));
+%Initialize the function multiplying the series
+series_multiplier = (4*P)/(pi^4*a*b*D);
+switch(selection)
+    case 1:
+        y = deflection(x_o,y_o,a,b,series_multiplier);
+    case 2:
+        y = deflection_di
+end
+%initialize function into sub-calculations
+
+%testing
+
+
