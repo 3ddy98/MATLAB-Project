@@ -8,9 +8,6 @@ function y = deflection(x0,y0,a,b,x,y,P,D)
 %         sin_x_function = sin((m*pi*x)/a); % sin equation with X assuming X = a
 %         sin_y_function = sin((n*pi*y)/b); %sin equation with Y assuming Y =
 
-total_function_summation = 0;
-total_summation = 0;
-
 [X,Y] = meshgrid(x,y);
 Z = 0;
 for m = 1:1:10

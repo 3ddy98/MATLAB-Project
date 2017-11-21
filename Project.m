@@ -26,12 +26,17 @@ disp(D)
 %% Start of Selection
 %Initialize the function multiplying the series
 
-fprintf('[1] Point Load\n');
-fprintf('[2] Distributed load\n\n');
+fprintf('[1] Point Load Rectangular\n');
+fprintf('[2] Distributed load Rectangular\n\n');
+fprintf('[3] Both Rectangular\n');
+fprintf('=======Circular=======');
+fprintf('[4] Point Load Circular\n');
+fprintf('[5] Distributed Load Rectangular\n');
+fprintf('[6] Both Circular\n');
 selection = input('Selection:');
 
 switch(selection)
-        case 1  %point load
+    case 1  %point load
         %input x_o location of load
         x_o = input('Xo:');
         %input y_o location of load
@@ -42,10 +47,18 @@ switch(selection)
         y = deflection(x_o,y_o,a,b,x,y,P,D);
         %fprintf('Deflection: %.5g\n',y);
     case 2
-        qo = input('qo:'); %distributed load
-        series_multiplier_distributed= (16*qo)/(pi^6*D);
-        y = deflection_distributed(a,b,x,y,series_multiplier_distributed);
+        q0 = input('qo:'); %distributed load
+        y = deflection_distributed(a,b,x,y,q0,D);
         %fprintf('Deflection: %.5g\n',y);
+    case 3
+        q0=input('q0:');
+        y = both_distributed
+        
+    case 4
+        
+    case 5
+        
+    case 6
 
     otherwise
         fprintf('Sorry that is not an option');
