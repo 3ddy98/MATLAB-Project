@@ -1,4 +1,4 @@
-function y = deflection_distributed_rectangular(a,b,x,y,q0,D)
+function max_distributed_rectangular = deflection_distributed_rectangular(a,b,x,y,q0,D)
 % sin_x_function = sin((m.*pi.*x)./a);
 % sin_y_function = sin((n.*pi.*y)./b);
 % dividing_function = (m.*n).*((m.^2./a.^2)+(n.^2./b.^2)).^2;
@@ -12,7 +12,7 @@ for m= 1:2:19
 
   end
 end
-s = max(max(total_function_summed));
+max_distributed_rectangular = max(max(total_function_summed));
 disp(s)
 contour(X,Y,total_function_summed)
 xlabel('x - pos (in)')

@@ -1,4 +1,4 @@
-function max_both_distributed_rectagular = both_distributed_rectangular(x0,y0,a,b,x,y,h,E,v,q0,P)
+function max_both_rectagular = both_distributed_rectangular(x0,y0,a,b,x,y,h,E,v,q0,P)
 %Case 6
 % x0=5;
 % y0=10;
@@ -46,7 +46,7 @@ for m= 1:2:19
   end
 end
 both_sum = total_function_summed + Z;
-max_both_distributed_rectagular = max(max(both_sum));
+max_both_rectagular = max(max(both_sum));
 disp(max_both_distributed_rectangular)
 
 %-------Graphing-------%

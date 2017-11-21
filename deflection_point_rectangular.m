@@ -1,4 +1,4 @@
-function y = deflection_point_rectangular(x0,y0,a,b,x,y,P,D)
+function max_point_rectangular = deflection_point_rectangular(x0,y0,a,b,x,y,P,D)
 %3.11
 %.311
 
@@ -15,7 +15,7 @@ for m = 1:1:10
         Z = Z + ((4*P)/((pi^4)*a*b*D)).*(((sin((m.*pi.*x0)./a).*sin((n.*pi.*y0)./b))./(((m^2/a^2)+(n^2/b^2))^2)).*sin((m.*pi.*X)./a).*sin((n.*pi.*Y)./b));
     end
 end
-s = max(max(Z));
+max_point_rectangular = max(max(Z));
 disp(s)
 surf(X,Y,Z)
 xlabel('x - pos (in)')
