@@ -1,4 +1,4 @@
-function max_both_circular = both_distributed_circular(d,h,E,v,q)
+function max_both_circular = both_distributed_circular(d,h,E,v,q0,P)
 % d=8;
 % h=.25;
 % E=30*10^6;
@@ -15,7 +15,7 @@ D=(E*h^3)/(12*(1-v^2));
 
 %-----Distributed Circle-----%
 
-W_distributed=((q.*(a.^2-R.*2))./(64.*D)).*(((5+v)./(1+v)).*a.^2-R.^2);
+W_distributed=((q0.*(a.^2-R.*2))./(64.*D)).*(((5+v)./(1+v)).*a.^2-R.^2);
 
 %surf (X,Y,W)
 %disp(max(max(W)))
@@ -24,7 +24,7 @@ W_distributed=((q.*(a.^2-R.*2))./(64.*D)).*(((5+v)./(1+v)).*a.^2-R.^2);
 
 D=(E*h^3)/(12*(1-v^2));
 
-W_point=(p)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
+W_point=(P)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
 
 
 %-------Both-------%
