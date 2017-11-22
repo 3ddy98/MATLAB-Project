@@ -7,7 +7,6 @@ function max_point_rectangular = deflection_point_rectangular(x0,y0,a,b,x,y,P,D)
 %         dividing_function = ((m^2/a^2)+(n^2/b^2))^2; %equation that divides in the sum
 %         sin_x_function = sin((m*pi*x)/a); % sin equation with X assuming X = a
 %         sin_y_function = sin((n*pi*y)/b); %sin equation with Y assuming Y =
-
 [X,Y] = meshgrid(x,y);
 Z = 0;
 for m = 1:1:10
