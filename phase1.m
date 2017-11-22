@@ -1,16 +1,17 @@
 function [max_def] = phase1(a,b,h,E,v,q0,x0,y0,P,d,selection)
-%
+%phase1(width,length,height,Elastic Modulus,Poisson Ratio,Distributed Load,Load X, Load Y,Point Load,diameter,selection)
+
 D=(E*h^3)/(12*(1-v^2));
 
-switch(selection)
+switch selection
     case 1 %square
         x = 0:1:a;
         y = 0:1:b;
         [X,Y] = meshgrid(x,y);
-        Wc = [zeros(size(X))];
-        Wd = [zeros(size(X))];
+        Wc = zeros(size(X));
+        Wd = zeros(size(X));
 
-        if q~= 0
+        if q0 ~= 0
             %deflection distributed rectangular
             series_multiplier_distributed= (16*q0)/(pi^6*D);
             for m= 1:2:19
@@ -20,8 +21,6 @@ switch(selection)
 
               end
             end
-            max_distributed_rectangular = max(max(Wd));
-            disp(s)
             %contour(X,Y,Wd)
             %surf(x,Y,Wd)
             xlabel('x - pos (in)')
@@ -36,8 +35,6 @@ switch(selection)
                     Wc = Wc + ((4*P)/((pi^4)*a*b*D)).*(((sin((m.*pi.*x0)./a).*sin((n.*pi.*y0)./b))./(((m^2/a^2)+(n^2/b^2))^2)).*sin((m.*pi.*X)./a).*sin((n.*pi.*Y)./b));
                 end
             end
-            max_point_rectangular = max(max(Wc));
-            disp(s)
             %surf(X,Y,Wc)
             %contour(X,Y,Wc)
             xlabel('x - pos (in)')
@@ -48,7 +45,7 @@ switch(selection)
 
           W = Wc + Wd;
           max_def=max(max(W));
-          countour(X,Y,W);
+          contour(X,Y,W);
 
     case 2  %circular
 
@@ -56,8 +53,8 @@ switch(selection)
         r = 0:.5:a;
         theta = 0:pi/24:2*pi;
         [R, THETA] = meshgrid(r,theta);
-        Wd=[zeros(size(r))];
-        Wc=[zeros(size(r))];
+        Wd=zeros(size(r));
+        Wc=zeros(size(r));
 
 
         if q0 ~= 0
