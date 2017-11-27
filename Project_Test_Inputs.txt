@@ -1,6 +1,6 @@
 Project Inputs: (width(a),length(b),height,E,v,qo,xo,yo,P,d,selection)
 
--Rectangular
+-Rectangular 
 
 1: phase1(30,30,0.25,30000000,0.3,0,15,15,30000,0,1)
 2: phase1(30,30,.25,30000000,0.3,0,5,15,3000,0,1)
