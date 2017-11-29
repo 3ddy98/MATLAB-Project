@@ -1,0 +1,7 @@
+[x]=A7GAUSSBarth([1 2;3 1],[8;14])
+{'A7GAUSSBarth' is not found in the current folder or on the MATLAB path, but exists in:
+    C:\Users\Alex\Desktop\ME018\Assignment 7
+
+<a href = "matlab:cd 'C:\Users\Alex\Desktop\ME018\Assignment 7'">Change the MATLAB current folder</a> or <a href = "matlab:addpath 'C:\Users\Alex\Desktop\ME018\Assignment 7'">add its folder to the MATLAB path</a>.
+} 
+diary off
