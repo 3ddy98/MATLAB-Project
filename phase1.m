@@ -5,9 +5,12 @@ function [max_def] = phase1(a,b,h,E,v,q,x0,y0,P,d,selection,plot_type)
 D=(E*h^3)/(12*(1-v^2));
 
 switch (selection)
-    case 1 %square
+    case 1 % Rectangular deflection
+
+        % Setting values for variables
         x = 0:a/50:a;
         y = 0:b/50:b;
+        % Creating a meshgrid to evaluate deflection on
         [X,Y] = meshgrid(x,y);
         Wc = zeros(size(X));
         Wd = zeros(size(X));
@@ -43,13 +46,13 @@ switch (selection)
             xlabel('x - pos ')
             ylabel('y - pos ')
             zlabel('Deflection ')
-            title({'Deflectoion of a Rectangular Plate';['Max Deflection = ',num2str(max_def)]})
+            title({'Deflection of a Rectangular Plate';['Max Deflection = ',num2str(max_def)]})
           case 2
             surf(X,Y,W);
             xlabel('x - pos ')
             ylabel('y - pos ')
             zlabel('Deflection ')
-            title({'Deflectoion of a Rectangular Plate';['Max Deflection = ',num2str(max_def)]})
+            title({'Deflection of a Rectangular Plate';['Max Deflection = ',num2str(max_def)]})
           otherwise
             fprintf('Plot type selection does not exist\n')
             fprintf('Using contour as default plot\n')
@@ -58,7 +61,7 @@ switch (selection)
     case 2  %circular
 
         a = d/2;
-        r = 0:.5:a;
+        r = 0:a/50:a;
         theta = 0:pi/24:2*pi;
         [R, THETA] = meshgrid(r,theta);
         Wd=zeros(size(r));
@@ -73,9 +76,11 @@ switch (selection)
           %Point Deflection Circular Plate
           Wc=(P)./(16.*pi.*D).*(((3+v)./(1+v)).*(a.^2-R.^2)+2.*R.^2.*log(R./a));
         end
-
+        %Total deflection of a point and distributed load on a circular plate
         W = Wd + Wc;
+        %Max deflection of the total deflection
         max_def = max(max(W));
+        %convert to polar coordinates
         X = R.*cos(THETA);
         Y = R.*sin(THETA);
 
@@ -86,19 +91,18 @@ switch (selection)
           xlabel('x - pos ')
           ylabel('y - pos ')
           zlabel('Deflection ')
-          title({'Deflectoion of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
+          title({'Deflection of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
         case 2
           surf(X,Y,W);
           xlabel('x - pos ')
           ylabel('y - pos ')
           zlabel('Deflection ')
-          title({'Deflectoion of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
+          title({'Deflection of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
         case 3
-        plot(X,W);
-        xlabel('x - pos ')
-        ylabel('y - pos ')
-        zlabel('Deflection ')
-        title({'Deflectoion of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
+        plot(r,W);
+        xlabel('Radius ')
+        ylabel('Deflection')
+        title({'Deflection of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
 
         otherwise
           fprintf('Plot type selection does not exist\n')
