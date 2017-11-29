@@ -6,8 +6,8 @@ D=(E*h^3)/(12*(1-v^2));
 
 switch (selection)
     case 1 %square
-        x = 0:1:a;
-        y = 0:1:b;
+        x = 0:a/50:a;
+        y = 0:b/50:b;
         [X,Y] = meshgrid(x,y);
         Wc = zeros(size(X));
         Wd = zeros(size(X));
@@ -94,7 +94,7 @@ switch (selection)
           zlabel('Deflection ')
           title({'Deflectoion of a Circular Plate';['Max Deflection = ',num2str(max_def)]})
         case 3
-        plot(W,X);
+        plot(X,W);
         xlabel('x - pos ')
         ylabel('y - pos ')
         zlabel('Deflection ')
