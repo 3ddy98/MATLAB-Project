@@ -7,6 +7,7 @@ while true
     fprintf('[1] Rectangular\n');
     fprintf('[2] Circular\n');
     selection_1 = input('Selection: ');
+    
     switch(selection_1)
         case 1
             a = input('a:');    %width
