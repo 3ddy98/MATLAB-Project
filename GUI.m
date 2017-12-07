@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 05-Dec-2017 21:58:47
+% Last Modified by GUIDE v2.5 06-Dec-2017 22:11:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -500,3 +500,12 @@ switch (selection)
           surf(X,Y,W);
         end
 end
+
+
+% --- Executes on button press in radiobutton1.
+function radiobutton1_Callback(hObject, eventdata, handles)
+% hObject    handle to radiobutton1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of radiobutton1
